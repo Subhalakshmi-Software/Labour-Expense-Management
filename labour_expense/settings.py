@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,7 +77,7 @@ DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
 LOGOUT_REDIRECT_URL = '/accounts/login'
 LOGIN_REDIRECT_URL = '/labour_expense_report'
 WSGI_APPLICATION = 'labour_expense.wsgi.application'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
