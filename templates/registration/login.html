@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %} 
+    <h2 style="font-family: 'Lato', sans-serif;">Login</h2>
+    <div  class="center-block" id="login" style="width: 40%;">
+        <form class="form-horizontal form" name="LoginForm"  method="post">
+        {% csrf_token %}
+        {% if next %}
+            <input type="hidden" name="next" value="{{ next }}" />
+        {% endif %}
+        <div class="control-group mt-4 mb-2">
+            <div class="controls">
+                <input class="form-control" type="text" id="username" name="username"  placeholder="Username">
+            </div>
+        </div>
+        <div class="control-group mb-4">
+            <div class="controls">
+                <input class="form-control" type="password" name="password" id="password" placeholder="Password">
+            </div>
+      </div>
+      <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-success btn-block">Login</button>
+            </div>
+        </div>
+        </form>
+    </div>
+{% endblock content %}
