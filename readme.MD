@@ -7,4 +7,8 @@ docker run -d \
     -v $(pwd)/db.sqlite3:/code/db.sqlite3 \
     labour_expense_management:latest
 
+docker exec -it 87fc80e2e68e bash
+
+git clone https://github.com/Subhalakshmi-Software/Labour-Expense-Management.git
+
 ```

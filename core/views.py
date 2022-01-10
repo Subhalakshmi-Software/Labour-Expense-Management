@@ -21,6 +21,7 @@ def bank_accounts_entry(request):
         form = BankAccountsForm()
     return render(request, "form_entry.html",{"form": form,"form_name": "Bank Accounts Entry"})
 
+@permission_required("core.labour_details.can_add_labour_details")
 @login_required
 def labour_details_entry(request):
     if request.method == "POST":
@@ -32,6 +33,7 @@ def labour_details_entry(request):
         form = LabourDetailsForm()
     return render(request, "form_entry.html",{"form": form,"form_name": "Labour Details Entry"})
 
+@permission_required("core.labour_expense.can_add_labour_expense")
 @login_required
 def labour_expense_entry(request):
     if request.method == "POST":
@@ -43,6 +45,7 @@ def labour_expense_entry(request):
         form = LabourExpenseForm()
     return render(request, "form_entry.html",{"form": form,"form_name": "Labour Expense Entry"})
 
+@permission_required("core.workplace.can_add_workplace")
 @login_required
 def workplace_entry(request):
     if request.method == "POST":
